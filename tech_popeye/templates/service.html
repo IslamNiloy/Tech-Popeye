@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="service">
+    <div class="container">
+        <div class="section-header text-center">
+            <h1> Our Services</h2>
+        </div>
+        <div class="row">
+            {% for service in services %}
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="{{ forloop.counter0|divisibleby:2|yesno:'0.1s, 0.2s' }}">
+                    <div class="service-item">
+                        <div class="service-img">
+                            <img src="{{ service.image.url }}" alt="Image">
+                            <div class="service-overlay">
+                                <p>{{ service.description }}</p>
+                            </div>
+                        </div>
+                        <div class="service-text">
+                            <h3>{{ service.title }}</h3>
+                            <a class="btn" href="{{ service.image.url }}" data-lightbox="service">+</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
+
+
+

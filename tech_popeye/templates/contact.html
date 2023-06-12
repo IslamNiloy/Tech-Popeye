@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-success">
+      {{ message }}
+    </div>
+  {% endfor %}
+{% endif %}
+
+<div class="contact wow fadeInUp">
+    <div class="container">
+        <div class="section-header text-center">
+            <p>Get In Touch</p>
+            <h2>For Any Query</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="flaticon-address"></i>
+                        <div class="contact-text">
+                            <h2>Location</h2>
+                            <p>KBG Tower
+                                15, Malibagh Chowdhurypara, DIT Road, Dhaka-1219, Bangladesh </p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="flaticon-call"></i>
+                        <div class="contact-text">
+                            <h2>Phone</h2>
+                            <p>+8801958500123</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="flaticon-send-mail"></i>
+                        <div class="contact-text">
+                            <h2>Email</h2>
+                            <p>hello@techpopeye.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="contact-form">
+                    <div id="success"></div>
+                    <form action={% url 'contactform' %}  method="post" name="sentMessage" id="contactForm" >
+                        {% csrf_token %}
+                        <div class="control-group">
+                          <input type="text" class="form-control" id="name" name="name" placeholder="Your Name"   required >
+                          <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                          <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required >
+                          <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                          <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                          
+                          <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                          <textarea class="form-control" id="message" name="message" placeholder="Message"  required></textarea>
+                          <p class="help-block text-danger"></p>
+                        </div>
+                        <div>
+                          <button class="btn" type="submit" id="sendMessageButton">Send Message</button>
+                        </div>
+                      </form>
+                      
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content%}
