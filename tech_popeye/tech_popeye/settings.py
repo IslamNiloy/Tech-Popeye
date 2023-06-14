@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-d%qvo#8#!gvi^$mvslh@31#q0wyl0(x(x7_#o4-x7rq0@-n*#m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -78,10 +78,10 @@ WSGI_APPLICATION = 'tech_popeye.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'tech-popeye',
-        'USER':'root',
-        'PASSWORD':'',
-        'HOST':'localhost',
+        'NAME': 'techdata',
+        'HOST':'techpopeye.c3qnedk2x2rf.ap-southeast-2.rds.amazonaws.com',
+	'USER':'admin',
+        'PASSWORD':'10170122',
         'PORT':'3306',
     }
 }
