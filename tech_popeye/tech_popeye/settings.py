@@ -78,8 +78,8 @@ WSGI_APPLICATION = 'tech_popeye.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'techdata',
-        'HOST':'techpopeye.c3qnedk2x2rf.ap-southeast-2.rds.amazonaws.com',
+        'NAME': 'techpopeye',
+        'HOST':'database-1.czvfis3dr7uo.ap-south-1.rds.amazonaws.com',
 	'USER':'admin',
         'PASSWORD':'10170122',
         'PORT':'3306',
